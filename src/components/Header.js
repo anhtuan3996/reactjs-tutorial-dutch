@@ -2,9 +2,25 @@ import React from 'react'
 
 import mainLogo from '../assets/images/logo.png'
 
-console.log(mainLogo)
 
 function Header() {
+    const categories = [
+        {id: 'km', name: 'Khuyến mãi' },
+        {id: 'mbc', name: 'Macbook cũ' },
+        {id: 'hcpo', name: 'Hàng CPO' },
+        {id: 'hm', name: 'Hàng mới' },
+        {id: 'hm', name: 'Hàng mới' },
+        {id: 'pk', name: 'Phụ kiện' },
+        {id: 'dv', name: 'Dịch vụ' },
+        {id: 'dv', name: 'Trả góp' },
+        {id: 'dv', name: 'Blog' },
+        {id: 'dv', name: 'Bảo hành' },
+        {id: 'dv', name: 'Về chúng tôi' },
+        {id: 'dv', name: 'Liên hệ' }
+    ]
+    let elements = categories.map((category, index) => {
+    return <li className="category__item" key={index}> {category.name} </li>
+    })
     return (
         <div>
             <div className="logo">
@@ -12,42 +28,7 @@ function Header() {
             </div>
             <div className="category">
                 <ul className="category__list">
-                    <li className="category__item">
-                        Khuyến mại
-                    </li>
-                    <li className="category__item">
-                        Khuyến mại
-                    </li>
-                    <li className="category__item">
-                        Macbook cũ
-                    </li>
-                    <li className="category__item">
-                        Hàng CPO
-                    </li>
-                    <li className="category__item">
-                        Hàng mới
-                    </li>
-                    <li className="category__item">
-                        Phụ kiện
-                    </li>
-                    <li className="category__item">
-                        Dịch vụ
-                    </li>
-                    <li className="category__item">
-                        Trả góp
-                    </li>
-                    <li className="category__item">
-                        Blog
-                    </li>
-                    <li className="category__item">
-                        Bảo hành
-                    </li>
-                    <li className="category__item">
-                        Về chúng tôi
-                    </li>
-                    <li className="category__item">
-                        Liên hệ
-                    </li>
+                    { elements }
                 </ul>
             </div>
         </div>
