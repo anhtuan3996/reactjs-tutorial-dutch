@@ -1,9 +1,14 @@
 import React from 'react'
+import { useRef } from 'react'
 import product1 from '../assets/images/product1.jpg'
 import product2 from '../assets/images/product1.jpg'
 import ProductItem from './ProductItem'
 
 function Product() {
+
+    const textInput = useRef(null);
+
+
     const products = [
         {
             name: "Sản phẩm 1",
@@ -32,11 +37,19 @@ function Product() {
         }
     ]
 
+    const search = () => {
+        console.log( textInput.current.value, 'HHAA')
+    }
+
     // let elements = products.map( (product, index) => {
     //     return <ProductItem image={product.image} key={index} name={product.name} price={product.price} />
     // })
     return(
         <div className="product">
+            <div>
+                <input className="input-search"  ref={textInput} />
+                <button onClick={search}>Search</button>
+            </div>
             <ul className="product__list">
                 {
                     products.map( (product, index) => 
